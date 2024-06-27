@@ -1,0 +1,7 @@
+.container {
+  background-image: url(../SharedLayout/images/Frame\ 1.jpg),
+    linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2));
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: auto;
+}
