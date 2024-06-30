@@ -1,33 +1,44 @@
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import css from './NavBar.module.css';
+import logo from 'assets/images/logo.png';
 
 const Navbar = () => {
+  const linkClass = ({ isActive, isPending, isTransitioning }) => {
+    return isActive || isPending || isTransitioning
+      ? `${css.link} ${css.activeLink}`
+      : css.link;
+  };
+
   return (
-    <nav className="navbar">
-      <Link to="/" className="navbar-brand">
-        <img src="images/logo.png" alt="slimlogo" />
-        Slim Mom
-      </Link>
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <Link to="/diary" className="nav-link">
-            Diary
-          </Link>
+    <nav className={css.navbar}>
+      <NavLink to="/" exact className={css.logo}>
+        <img src={logo} alt="SlimMom" />
+        <h1>
+          Slim<span className={css.orange}>Mom</span>
+        </h1>
+      </NavLink>
+      <div className={css.verticalLine}></div>
+      <ul className={css.navList}>
+        <li>
+          <NavLink to="/login" className={linkClass}>
+            Log in
+          </NavLink>
         </li>
-        <li className="nav-item">
-          <Link to="/calculator" className="nav-link">
-            Calculator
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/registration" className="nav-link">
+        <li>
+          <NavLink to="/register" className={linkClass}>
             Registration
-          </Link>
+          </NavLink>
         </li>
-        <li className="nav-item">
-          <Link to="/login" className="nav-link">
-            Login
-          </Link>
+        <li>
+          <NavLink to="/diary" className={linkClass}>
+            Diary
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/calculator" className={linkClass}>
+            Calculator
+          </NavLink>
         </li>
       </ul>
     </nav>

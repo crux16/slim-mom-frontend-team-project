@@ -4,22 +4,22 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import MainLayout from 'layouts/MainLayout';
-import Login from 'pages/Login/Login';
-import Registration from 'pages/Registration/Registration';
-import HealthHome from 'pages/HealthHome/HealthHome';
-import HealthCalculator from 'pages/HealthCalculator/HealthCalculator';
-import HealthDiary from 'pages/HealthDiary/HealthDiary';
+import SharedLayout from './SharedLayout/SharedLayout';
+import LoginPage from 'pages/LoginPage/LoginPage';
+import RegisterPage from 'pages/RegisterPage/RegisterPage';
+import CalculatorPage from 'pages/CalculatorPage/CalculatorPage';
+import HomePage from 'pages/HomePage/HomePage';
+import DiaryPage from 'pages/DiaryPage/DiaryPage';
 
 export const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<HealthHome />} />
-        <Route path="/diary" element={<HealthDiary />} />
-        <Route path="/calculator" element={<HealthCalculator />} />
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/login" element={<Login />} />
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="calculator" element={<CalculatorPage />} />
+        <Route path="diary" element={<DiaryPage />} />
       </Route>
     ),
     {
