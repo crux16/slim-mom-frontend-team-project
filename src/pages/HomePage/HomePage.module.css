@@ -1,0 +1,48 @@
+.container {
+  border: 1px;
+  padding-top: 112px;
+  padding-left: 20px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 160px;
+    padding-left: 32px;
+  }
+
+  @media screen and (min-width: 1158px) {
+    padding-top: 240px;
+    padding-left: 16px;
+  }
+}
+
+.title {
+  width: 335px;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 25.2px;
+  font: verdana;
+
+  @media screen and (min-width: 768px) {
+    font-size: 34px;
+    line-height: 47.6px;
+    width: 528px;
+  }
+
+  @media screen and (min-width: 1158px) {
+    font-size: 34px;
+    line-height: 47.6px;
+    /* width: 608px; */
+  }
+  /* font: verdana; */
+}
+
+.label1 {
+  display: block;
+}
+
+.button {
+  border-radius: 30px;
+  width: 210px;
+  height: 43px;
+  background-color: #fc842d;
+  color: white;
+}
