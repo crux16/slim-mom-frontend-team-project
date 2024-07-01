@@ -1,9 +1,12 @@
-import css from './LoginForm.module.css';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { logIn } from '../../redux/auth/authOperations';
 
+import style from './LoginForm.module.css';
+
 export const LoginForm = () => {
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -16,17 +19,32 @@ export const LoginForm = () => {
     );
     form.reset();
   };
+
+  const handleRegisterClick = () => {
+    navigate('/register');
+  };
+    
   return (
-    <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label className={css.label}>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <div className={style.form_container}>
+      <form className={style.form} onSubmit={handleSubmit} autoComplete="off">
+        <h2 className={style.h2}>Log In</h2>
+        <label className={style.label}>
+          Email *
+          <input className={style.input} type="email" name="email" />
+        </label>
+        <label className={style.label}>
+          Password *
+          <input className={style.input} type="password" name="password" />
+        </label>
+        <div className={style.button_container}>
+          <button className={style.login_button} type="submit">
+            Log in
+          </button>
+          <button className={style.register_button} type="button" onClick={handleRegisterClick}>
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };

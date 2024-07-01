@@ -1,0 +1,131 @@
+.form_container {
+  position: relative;
+  height: 100%;
+}
+
+.form {
+  position: absolute;
+  margin: 0px;
+  top: 35%;
+  display: flex;
+  align-items:flex-start;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.h2 {
+  color: #FC842D;
+  text-transform:uppercase;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17.01px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 17.01px;
+  color: #9B9FAA;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: 700;
+}
+
+.input {
+  font-size: 14px;
+  padding: 0px;
+  border: none;
+  border-bottom: 1px solid #E0E0E0;
+  color: #9B9FAA;
+  width: 15vw;
+}
+.input:hover {
+  cursor: pointer;
+}
+
+.button_container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-top: 16px;
+}
+
+.register_button {
+  display: inline-block;
+  text-decoration: none;
+  width: 181px;
+  height: 44px;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 17.01px;
+  border: none;
+  border-radius: 50px;
+  background-color: #FC842D;
+  color: #fff;
+  box-shadow: 0px 4px 10px 0px #FC842D80;
+
+}
+.register_button:hover {
+  background-color: #fff;
+  color: #FC842D;
+  cursor: pointer;
+}
+
+.login_button {
+  display: inline-block;
+  text-decoration: none;
+  width: 181px;
+  height: 44px;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 17.01px;
+  border: 2px solid #FC842D;
+  border-radius: 50px;
+  background-color: #fff; 
+  color: #FC842D;
+}
+.login_button:hover {
+  background-color: #FC842D;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px 0px #FC842D80;
+}
+
+@media screen and (max-width: 1024px) {
+  .input {
+    width: 35vw;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .form {
+    align-items: center;
+  }
+
+  .input {
+    width: 85vw;
+  }
+  
+  .button_container {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .login_button,
+  .register_button {
+    width: 182px;
+    height: 44px;
+    padding: 14px;
+    font-size: 16px;
+  }
+}
