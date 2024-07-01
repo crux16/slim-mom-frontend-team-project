@@ -1,4 +1,5 @@
 .container {
+
   background-image: none;
 
   @media screen and (min-width: 768px) {
@@ -26,3 +27,4 @@
     /* left: 300px; */
   }
 }
+
