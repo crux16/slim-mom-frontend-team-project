@@ -1,9 +1,13 @@
 import { useDispatch } from 'react-redux';
-import css from './RegisterForm.module.css';
+import { useNavigate } from 'react-router-dom';
 import { register } from '../../redux/auth/authOperations';
+
+import style from './RegisterForm.module.css';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -17,22 +21,36 @@ export const RegisterForm = () => {
     );
     form.reset();
   };
+    
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
 
   return (
-    <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
-        Username
-        <input type="text" name="name" />
-      </label>
-      <label className={css.label}>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label className={css.label}>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Register</button>
-    </form>
+    <div className={style.form_container}>
+      <form className={style.form} onSubmit={handleSubmit} autoComplete="off">
+        <h2 className={style.h2}>Register</h2>
+        <label className={style.label}>
+          Name *
+          <input className={style.input} type="text" name="name" />
+        </label>
+        <label className={style.label}>
+          Email *
+          <input className={style.input} type="email" name="email" />
+        </label>
+        <label className={style.label}>
+          Password *
+          <input className={style.input} type="password" name="password" />
+        </label>
+        <div className={style.button_container}>
+          <button className={style.register_button} type="submit">
+            Register
+          </button>
+          <button className={style.login_button} type="button" onClick={handleLoginClick}>
+            Log in
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
