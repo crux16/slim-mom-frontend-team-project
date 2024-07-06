@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <nav className={css.navbar}>
-      <NavLink to="/" exact className={css.logo}>
+      <NavLink to="/" className={css.logo}>
         <img src={logo} alt="SlimMom" />
         <h1>
           Slim<span className={css.orange}>Mom</span>

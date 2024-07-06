@@ -103,6 +103,7 @@
   }
 
   .logo h1 {
+    width: 150px;
     margin-left: -20px;
     font-size: 32px;
     letter-spacing: 3px;
