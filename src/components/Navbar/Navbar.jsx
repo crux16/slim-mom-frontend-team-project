@@ -30,7 +30,7 @@ const Navbar = () => {
             Registration
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to="/diary" className={linkClass}>
             Diary
           </NavLink>
@@ -39,7 +39,7 @@ const Navbar = () => {
           <NavLink to="/calculator" className={linkClass}>
             Calculator
           </NavLink>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
