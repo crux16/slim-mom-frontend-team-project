@@ -1,11 +1,14 @@
-/* .container {
+.container {
+
   background-image: none;
 
   @media screen and (min-width: 768px) {
     position: fixed;
     width: 100vw;
     height: 100vh;
+
     background-image: url(../../images/tabletMainBg.png);
+    /* linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2));  */
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: contain;
@@ -13,9 +16,15 @@
 
   @media screen and (min-width: 1158px) {
     position: fixed;
+    /* width: 0vw;
+    height: 0vw; */
     max-width: 100%;
     background-image: url(../../images/desktopMainBg.png);
+    /* linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)); */
+    /* background-repeat: no-repeat;*/
     background-position: right;
     background-size: contain;
+    /* left: 300px; */
   }
-} */
+}
+
