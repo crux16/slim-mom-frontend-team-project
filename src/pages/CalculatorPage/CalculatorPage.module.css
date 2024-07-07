@@ -36,63 +36,6 @@ h1 {
 
 /* Tablet */
 @media (min-width: 768px) {
-  .bgGrayVector {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    width: 540px;
-    height: 500px;
-
-    background-image: url('../../assets/images/gray-vector.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    z-index: -1;
-  }
-
-  .bgBanana {
-    position: absolute;
-    bottom: -100px;
-    right: 0;
-
-    width: 380px;
-    height: 380px;
-
-    background-image: url('../../assets/images/banana.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    z-index: -1;
-  }
-
-  .bgStrawBerry {
-    position: absolute;
-    bottom: 150px;
-    right: 0;
-
-    width: 240px;
-    height: 240px;
-
-    background-image: url('../../assets/images/strawberry.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    z-index: -1;
-  }
-
-  .bgLeaves {
-    position: absolute;
-
-    width: 400px;
-    height: 400px;
-
-    background-image: url('../../assets/images/leaves.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    z-index: -1;
-  }
   h1 {
     font-size: 2rem;
   }
@@ -113,39 +56,6 @@ h1 {
 
 /* Desktop */
 @media (min-width: 1024px) {
-  .container {
-    position: relative;
-  }
-
-  .bgGrayVector {
-    width: 480px;
-    height: 100%;
-  }
-
-  .bgBanana {
-    top: -130px;
-    right: 0;
-
-    width: 450px;
-    height: 450px;
-  }
-
-  .bgStrawBerry {
-    bottom: 150px;
-    right: 0;
-
-    width: 300px;
-    height: 300px;
-  }
-
-  .bgLeaves {
-    top: -80px;
-    right: 200px;
-
-    width: 700px;
-    height: 100%;
-  }
-
   h1 {
     width: 600px;
     font-size: 2.5rem;
