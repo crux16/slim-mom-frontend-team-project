@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { useAuth } from '../hooks/useAuth';
 import { refreshUser } from '../redux/auth/authOperations';
 
-const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+// const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const CalculatorPage = lazy(() =>
   import('../pages/CalculatorPage/CalculatorPage')
 );

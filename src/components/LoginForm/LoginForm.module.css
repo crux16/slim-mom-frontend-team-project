@@ -8,7 +8,7 @@
   margin: 0px;
   top: 35%;
   display: flex;
-  align-items:flex-start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 20px;
   padding-left: 32px;
@@ -16,32 +16,21 @@
 }
 
 .h2 {
-  color: #FC842D;
-  text-transform:uppercase;
+  color: #fc842d;
+  text-transform: uppercase;
   font-family: Verdana, Geneva, sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 17.01px;
-}
-
-.label {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
-  font-size: 14px;
-  line-height: 17.01px;
-  color: #9B9FAA;
-  font-family: Verdana, Geneva, sans-serif;
-  font-weight: 700;
 }
 
 .input {
-  width: 15vw;
+  width: 20vw;
   font-size: 14px;
   padding: 0px;
   border: none;
-  border-bottom: 1px solid #E0E0E0;
-  color: #9B9FAA;
+  border-bottom: 1px solid #e0e0e0;
+  color: #9b9faa;
 }
 .input:hover {
   cursor: pointer;
@@ -66,14 +55,13 @@
   line-height: 17.01px;
   border: none;
   border-radius: 50px;
-  background-color: #FC842D;
+  background-color: #fc842d;
   color: #fff;
-  box-shadow: 0px 4px 10px 0px #FC842D80;
-
+  box-shadow: 0px 4px 10px 0px #fc842d80;
 }
 .login_button:hover {
   background-color: #fff;
-  color: #FC842D;
+  color: #fc842d;
   cursor: pointer;
 }
 
@@ -87,16 +75,16 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 17.01px;
-  border: 2px solid #FC842D;
+  border: 2px solid #fc842d;
   border-radius: 50px;
-  background-color: #fff; 
-  color: #FC842D;
+  background-color: #fff;
+  color: #fc842d;
 }
 .register_button:hover {
-  background-color: #FC842D;
+  background-color: #fc842d;
   color: #fff;
   cursor: pointer;
-  box-shadow: 0px 4px 10px 0px #FC842D80;
+  box-shadow: 0px 4px 10px 0px #fc842d80;
 }
 
 /* Tablet styles (adjust as needed) */
@@ -115,7 +103,7 @@
   .input {
     width: 85vw;
   }
-  
+
   .button_container {
     flex-direction: column;
     align-items: center;
