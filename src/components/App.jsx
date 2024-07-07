@@ -1,12 +1,11 @@
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { Route, Routes } from 'react-router-dom';
-import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
+// import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAuth } from '../hooks/useAuth';
 import { refreshUser } from '../redux/auth/authOperations';
 
-// const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const CalculatorPage = lazy(() =>
   import('../pages/CalculatorPage/CalculatorPage')
 );
@@ -30,35 +29,18 @@ export const App = () => {
         <Route
           path="/register"
           element={
-            // <RegisterPage />
-            <RestrictedRoute redirectTo="/" component={<RegisterPage />} />
+            <RegisterPage />
+            // <RestrictedRoute redirectTo="/" component={<RegisterPage />} />
           }
         />
         <Route
           path="/login"
           element={
-            // <LoginPage />
-            <RestrictedRoute redirectTo="/" component={<LoginPage />} />
+            <LoginPage />
+            // <RestrictedRoute redirectTo="/" component={<LoginPage />} />
           }
         />
       </Route>
     </Routes>
   );
 };
-
-// export const App = () => {
-//   return (
-//     <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101',
-//       }}
-//     >
-//       React homework template
-//     </div>
-//   );
-// };
