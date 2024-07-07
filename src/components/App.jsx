@@ -7,9 +7,6 @@ import { useAuth } from '../hooks/useAuth';
 import { refreshUser } from '../redux/auth/authOperations';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
-const CalculatorPage = lazy(() =>
-  import('../pages/CalculatorPage/CalculatorPage')
-);
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
 
@@ -26,7 +23,7 @@ export const App = () => {
   ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<CalculatorPage />} />
+        <Route index element={<HomePage />} />
         <Route
           path="/register"
           element={
