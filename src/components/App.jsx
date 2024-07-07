@@ -9,6 +9,7 @@ import { refreshUser } from '../redux/auth/authOperations';
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
+const Calculator = lazy(() => import('../pages/CalculatorPage/CalculatorPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
