@@ -11,6 +11,9 @@ const CalculatorPage = lazy(() =>
 );
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
+const DiaryPage = lazy(() =>
+  import('../pages/DiaryPage/DiaryPage' /* webpackChunkName: 'diary-page' */)
+);
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -38,6 +41,13 @@ export const App = () => {
           element={
             <LoginPage />
             // <RestrictedRoute redirectTo="/" component={<LoginPage />} />
+          }
+        />
+        <Route
+          path="/diary"
+          element={
+            <DiaryPage />
+            // <RestrictedRoute redirectTo="/" component={<DiaryPage />} />
           }
         />
       </Route>
