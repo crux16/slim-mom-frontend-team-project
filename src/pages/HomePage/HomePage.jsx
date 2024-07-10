@@ -5,16 +5,15 @@ import { useState } from 'react';
 // import { ModalOverlay, useDisclosure } from '@chakra-ui/react';
 const HomePage = () => {
   //MODAL
-  const [openModal, setOpenModal] = useState(false);
-  const displayModal = (e) => {
-    e.preventDefault;
+  const [openModal, setOpenModal] = useState(true);
+  const displayModal = () => {
     setOpenModal(true);
 
   };
-  const closeModal = () => {
-    setOpenModal(false);
+  // const closeModal = () => {
+  //   setOpenModal(false);
 
-  };
+  // };
 
   return (
     <HelmetProvider>
@@ -68,12 +67,12 @@ const HomePage = () => {
               <span>4</span>
             </label>
           </div>
-          <button type="submit" className={css.button} onClick={ e => displayModal(e)}>
+          <button type="submit" className={css.button} onClick={displayModal}>
             Start losing weight
           </button>
         </form>
         {/* {openModal && <Modal closeModal={closeModal} />} */}
-        <Modal closeModal={true}>
+        <Modal closeModal={openModal}>
 
         </Modal>
       </div>
