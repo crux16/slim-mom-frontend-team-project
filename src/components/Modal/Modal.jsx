@@ -49,7 +49,6 @@ function Modal({ closeModal, openModal }) {
   //   navigate('/registration');
   //   dispatch(getDailyRate(null));
   // };
-
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape');
