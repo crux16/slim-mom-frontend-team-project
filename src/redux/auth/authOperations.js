@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://slim-mom-backend-team-project-ik9a.onrender.com';
+axios.defaults.baseURL = 'https://slim-mom-backend-team-project-ik9a.onrender.com/api/';
 // axios.defaults.baseURL = 'http://localhost:3000';
 
 const setAuthHeader = token => {
