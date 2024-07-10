@@ -52,7 +52,7 @@ function Modal({ closeModal, openModal }) {
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape');
-      onClose();
+      closeModal();
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -63,7 +63,7 @@ function Modal({ closeModal, openModal }) {
       window.removeEventListener('keydown', handleKeyDown);
       body.style.overflow = 'auto';
     };
-  }, [onClose]);
+  }, [closeModal]);
 
   return (
     <div className={css.modalBackground}>
