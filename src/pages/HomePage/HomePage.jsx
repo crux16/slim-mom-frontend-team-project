@@ -72,7 +72,10 @@ const HomePage = () => {
             Start losing weight
           </button>
         </form>
-        {openModal && <Modal closeModal={closeModal} />}
+        {/* {openModal && <Modal closeModal={closeModal} />} */}
+        <Modal closeModal={true}>
+
+        </Modal>
       </div>
     </HelmetProvider>
   );
