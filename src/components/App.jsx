@@ -5,14 +5,12 @@ import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAuth } from '../hooks/useAuth';
 import { refreshUser } from '../redux/auth/authOperations';
-import 'react-toastify/dist/ReactToastify.css';
 
 const CalculatorPage = lazy(() =>
   import('../pages/CalculatorPage/CalculatorPage')
 );
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
-const Diary = lazy(() => import('pages/DiaryPage/DiaryPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -42,7 +40,6 @@ export const App = () => {
             // <RestrictedRoute redirectTo="/" component={<LoginPage />} />
           }
         />
-        <Route path="/diary" element={<Diary />} />
       </Route>
     </Routes>
   );
