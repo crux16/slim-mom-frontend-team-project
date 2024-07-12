@@ -39,7 +39,6 @@ export default function DiaryAddProduct({ diaryBackBtn }) {
   const handleGramsChange = e => {
     if (e.target.value > 0 || e.target.value === '') {
       setGrams(e.target.value);
-
     } else {
       toast.warn('Grams can not be negative number or letters', {
         position: 'top-right',
@@ -91,7 +90,7 @@ export default function DiaryAddProduct({ diaryBackBtn }) {
               }}
               ListboxProps={{
                 sx: {
-                  backgroundColor: themeMode === 'dark' ? '#2a1d45' : '#ffffff'
+                  backgroundColor: themeMode === 'dark' ? '#2a1d45' : '#ffffff',
                 },
               }}
               freeSolo
