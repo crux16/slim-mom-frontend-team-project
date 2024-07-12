@@ -1,6 +1,6 @@
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { Route, Routes } from 'react-router-dom';
-import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
+import { PublicRoute } from './PublicRoute/PublicRoute';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
@@ -32,13 +32,13 @@ export const App = () => {
         <Route
           path="/register"
           element={
-            <RestrictedRoute redirectTo="/" component={<RegisterPage />} />
+            <PublicRoute redirectTo="/" component={<RegisterPage />} />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute redirectTo="/" component={<LoginPage />} />
+            <PublicRoute redirectTo="/" component={<LoginPage />} />
           }
         />
         <Route
