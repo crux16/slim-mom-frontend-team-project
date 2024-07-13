@@ -29,7 +29,7 @@
 //   );
 // };
 
-import css from './Modal.module.css';
+import css from './Modal.Module.css';
 import { MdClose } from 'react-icons/md';
 import { useEffect } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
