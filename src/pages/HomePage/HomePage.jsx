@@ -6,11 +6,13 @@ import CalculatorForm from 'components/CalculatorForm/CalculatorForm';
 // import { ModalOverlay, useDisclosure } from '@chakra-ui/react';
 const HomePage = () => {
   //MODAL
+
   // const [openModal, setOpenModal] = useState(true);
   // const displayModal = () => {
   //   setOpenModal(true);
 
   // };
+
   // const closeModal = () => {
   //   setOpenModal(false);
 
@@ -19,7 +21,7 @@ const HomePage = () => {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Slim Moms</title>
+        <title>Slim Mom</title>
       </Helmet>
       <div className={css.container}>
         <h1 className={css.title}>
@@ -77,6 +79,7 @@ const HomePage = () => {
         <Modal closeModal={true}>
 
         </Modal>
+
       </div>
     </HelmetProvider>
   );
