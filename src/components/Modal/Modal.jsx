@@ -29,7 +29,7 @@
 //   );
 // };
 
-import css from './Modal.Module.css';
+// import css from './Modal.module.css';
 import { MdClose } from 'react-icons/md';
 import { useEffect } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
@@ -66,31 +66,31 @@ function Modal({ closeModal, openModal }) {
   }, [closeModal]);
 
   return (
-    <div className={css.modalBackground}>
-      <div className={css.modalContainer}>
-        <button className={css.modalCloseBtn} onClick={closeModal}>
+    <div >
+      <div >
+        <button  onClick={closeModal}>
           <MdClose />
         </button>
-        <h1 className={css.modalHeader}>
+        <h1 >
           Your recommended daily calorie intake is
         </h1>
-        <p className={css.modalTotalCalories}>
-          X <span className={css.modalCaloriesLabel}>KCal</span>
+        <p >
+          X <span >KCal</span>
         </p>
-        <div className={css.modalProhibitedFoodContainer}>
-          <h2 className={css.modalProhibitedFoodTitle}>
+        <div >
+          <h2 >
             Foods you should not eat
           </h2>
-          <ol className={css.modalProhibitedFoodList}>
+          <ol >
             {/* {notAllowedProducts.map((item, index) => (
               <li className={css.modalProhibitedFoodItem} key={index}>
                 {index + 1}. {item}
               </li>
             ))} */}
-            <li className={css.modalProhibitedFoodItem}>List Number 1</li>
+            <li >List Number 1</li>
           </ol>
         </div>
-        <button className={css.modalStartBtn}>Start Losing Weight</button>
+        <button>Start Losing Weight</button>
       </div>
     </div>
   );
