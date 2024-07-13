@@ -1,0 +1,23 @@
+.container {
+  background-image: none;
+  background-color: lightgray;
+
+  @media screen and (min-width: 768px) {
+    /* position: fixed; */
+    /* width: 100vw;
+      height: 100vh; */
+
+    background-image: url(../../images/leafMd.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  @media screen and (min-width: 1158px) {
+    background-image: url(../../images/leafLg.png);
+    background-repeat: no-repeat;
+    background-position: right;
+
+    width: 517px;
+    height: 850px;
+  }
+}

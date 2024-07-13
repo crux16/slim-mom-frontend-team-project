@@ -1,13 +1,13 @@
-/* .link {
+.link {
   display: inline-block;
   text-decoration: none;
   padding: 12px;
   font-weight: 700;
-  /* color: #2a363b; 
+  color: #9B9FAA;
 }
 
 .linkActive {
   composes: link;
   font-weight: 800;
-  /* color: #e84a5f; 
-} */
+  color: #212121";
+}
