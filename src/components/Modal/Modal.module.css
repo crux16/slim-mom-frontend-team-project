@@ -1,0 +1,151 @@
+.modalBox {
+  text-align: center;
+  color: #212121;
+  position: absolute;
+  padding: 40px 20px;
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 22px 40px 0px rgba(0, 0, 0, 0.1);
+  overflow: scroll;
+}
+.modalBox * {
+  width: 100%;
+}
+.closeButton {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  width: auto;
+  height: 16px;
+  padding: 8px;
+  top: 2%;
+  right: 2%;
+  border-radius: 50%;
+  transition-duration: 200ms;
+}
+
+.backButtonMobbile {
+  height: 40px;
+  width: 100%;
+  background-color: #eff1f3;
+}
+.back {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  font-size: 16px;
+}
+.modalTitle {
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: left;
+  font: 700 18px/25px Verdana;
+}
+.totalCaloriesNumber {
+  font: 700 48px/58px Verdana;
+}
+.dailyRate {
+  color: #264061;
+  margin: 20px 0;
+}
+.notEat {
+  padding: 0;
+  text-align: left;
+}
+.hr {
+  margin: 32px auto 12px;
+  width: calc(100%-40px);
+  color: #9b9faa;
+}
+.text2 {
+  font: 700 14px/17px;
+  text-align: none;
+}
+ol {
+  padding: 20px 28px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 175px;
+  overflow-y: scroll;
+}
+.notEatItem {
+  font: 400 14p/17px Verdana;
+  color: #9b9faa;
+}
+
+.messageSpan{
+  font: 700 18px/25px Verdana;
+}
+
+.ptag{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 480px) {
+  .closeButton {
+    display: block;
+  }
+  .backButtonMobbile {
+    display: none;
+  }
+  .modalBox {
+    min-width: 400px;
+    height: auto;
+    width: auto;
+    padding: 64px 48px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .modalTitle {
+    margin-top: auto;
+    font: 700 26px/36px Verdana;
+    text-align: center;
+  }
+  .notEat {
+    margin: auto;
+    max-width: 330px;
+  }
+  .dailyRate {
+    margin: 20px 0;
+    font: 700 48px/58px Verdana;
+  }
+}
+@media screen and (min-width: 768px) {
+  .closeButton {
+    height: 46px;
+    width: auto;
+    top: 4%;
+    right: 4%;
+    padding: 12px;
+    font-size: 22px;
+    border-radius: 50%;
+  }
+  .modalBox {
+    padding: 82px;
+    min-width: 600px;
+  }
+}
+.buttonWrapper {
+  display: grid;
+  place-items: center;
+}
+.button {
+  margin-top: 40px;
+  padding: 10px 16px;
+  border-radius: 30px;
+  background-color: #fc842d;
+  max-width: 210px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  color: #fff;
+  text-transform: initial;
+  cursor: pointer;
+  font: 700 14/17 Verdana;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
