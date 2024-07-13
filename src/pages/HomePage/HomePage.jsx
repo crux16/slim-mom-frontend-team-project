@@ -8,7 +8,6 @@ const HomePage = () => {
   const [openModal, setOpenModal] = useState(true);
   const displayModal = () => {
     setOpenModal(true);
-
   };
   // const closeModal = () => {
   //   setOpenModal(false);
@@ -18,7 +17,7 @@ const HomePage = () => {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Slim Moms</title>
+        <title>Slim Mom</title>
       </Helmet>
       <div className={css.container}>
         <h1 className={css.title}>
@@ -72,9 +71,7 @@ const HomePage = () => {
           </button>
         </form>
         {/* {openModal && <Modal closeModal={closeModal} />} */}
-        <Modal closeModal={openModal}>
-
-        </Modal>
+        <Modal closeModal={openModal}></Modal>
       </div>
     </HelmetProvider>
   );
