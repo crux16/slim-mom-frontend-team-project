@@ -1,14 +1,18 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import css from './HomePage.module.css';
 import Modal from '../../components/Modal/Modal';
-import { useState } from 'react';
+// import { useState } from 'react';
+import CalculatorForm from 'components/CalculatorForm/CalculatorForm';
 // import { ModalOverlay, useDisclosure } from '@chakra-ui/react';
 const HomePage = () => {
   //MODAL
-  const [openModal, setOpenModal] = useState(true);
-  const displayModal = () => {
-    setOpenModal(true);
-  };
+
+  // const [openModal, setOpenModal] = useState(true);
+  // const displayModal = () => {
+  //   setOpenModal(true);
+
+  // };
+
   // const closeModal = () => {
   //   setOpenModal(false);
 
@@ -23,7 +27,8 @@ const HomePage = () => {
         <h1 className={css.title}>
           Calculate your daily calorie intake right now
         </h1>
-        <form>
+        <CalculatorForm />
+        {/* <form>
           <div>
             <label htmlFor="">
               <input type="number" />
@@ -69,9 +74,12 @@ const HomePage = () => {
           <button type="submit" className={css.button} onClick={displayModal}>
             Start losing weight
           </button>
-        </form>
+        </form> */}
         {/* {openModal && <Modal closeModal={closeModal} />} */}
-        <Modal closeModal={openModal}></Modal>
+        <Modal closeModal={true}>
+
+        </Modal>
+
       </div>
     </HelmetProvider>
   );

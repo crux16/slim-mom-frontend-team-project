@@ -4,9 +4,7 @@
 }
 
 .form {
-  position: absolute;
-  margin: 0px;
-  top: 35%;
+  margin-top: 135px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
