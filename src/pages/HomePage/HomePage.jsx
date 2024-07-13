@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { dailyRate } from 'redux/dailyRate/dailtyRateOperations';
@@ -119,6 +120,15 @@ const HomePage = () => {
       />
       <ModalWindow overlay={overlay} isOpen={isOpen} onClose={onClose} />
     </>
+=======
+import React from 'react';
+
+const HomePage = () => {
+  return (
+    <div>
+      <h1>Home Page</h1>
+    </div>
+>>>>>>> 4b816a06149fc85aed50d29f8a190e43ed188f5f
   );
 };
 

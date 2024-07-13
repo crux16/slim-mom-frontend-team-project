@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useDispatch } from 'react-redux';
 import { lazy, Suspense, useEffect } from 'react';
 import { Container } from '@chakra-ui/react';
@@ -88,5 +89,36 @@ export const App = () => {
         </Routes>
       </Suspense>
     </Container>
+=======
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from 'react-router-dom';
+import SharedLayout from './SharedLayout/SharedLayout';
+import LoginPage from 'pages/LoginPage/LoginPage';
+import RegisterPage from 'pages/RegisterPage/RegisterPage';
+import CalculatorPage from 'pages/CalculatorPage/CalculatorPage';
+import HomePage from 'pages/HomePage/HomePage';
+import DiaryPage from 'pages/DiaryPage/DiaryPage';
+
+export const App = () => {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="calculator" element={<CalculatorPage />} />
+        <Route path="diary" element={<DiaryPage />} />
+      </Route>
+    ),
+    {
+      basename: '/slim-mom-frontend-team-project',
+    }
+>>>>>>> 4b816a06149fc85aed50d29f8a190e43ed188f5f
   );
+
+  return <RouterProvider router={router} />;
 };

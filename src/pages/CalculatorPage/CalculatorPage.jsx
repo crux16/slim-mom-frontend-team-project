@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -121,3 +122,16 @@ export default function CalculatorPage() {
     </Wrapper>
   );
 }
+=======
+import React from 'react';
+
+const CalculatorPage = () => {
+  return (
+    <div>
+      <h1>Calculator Page</h1>
+    </div>
+  );
+};
+
+export default CalculatorPage;
+>>>>>>> 4b816a06149fc85aed50d29f8a190e43ed188f5f
