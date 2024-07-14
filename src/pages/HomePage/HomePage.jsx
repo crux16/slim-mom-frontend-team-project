@@ -1,17 +1,5 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import css from './HomePage.module.css';
-
-
-
-
-
-
-
-
-
-
-
-
 import Modal from '../../components/Modal/Modal';
 // import { useState } from 'react';
 import CalculatorForm from 'components/CalculatorForm/CalculatorForm';
@@ -25,7 +13,6 @@ const HomePage = () => {
 
   // };
 
-
   // const closeModal = () => {
   //   setOpenModal(false);
 
@@ -37,17 +24,10 @@ const HomePage = () => {
         <title>Slim Mom</title>
       </Helmet>
       <div className={css.container}>
-
-
-
-
         <h1 className={css.title}>
           Calculate your daily calorie intake right now
         </h1>
         <CalculatorForm />
-
-
-
         {/* <form>
           <div>
             <label htmlFor="">
@@ -97,11 +77,8 @@ const HomePage = () => {
         </form> */}
         {/* {openModal && <Modal closeModal={closeModal} />} */}
         <Modal closeModal={true}>
-
         </Modal>
-
       </div>
-
     </HelmetProvider>
   );
 };
