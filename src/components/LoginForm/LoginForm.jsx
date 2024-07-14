@@ -8,7 +8,9 @@ import { logIn } from '../../redux/auth/authOperations';
 import css from './LoginForm.module.css';
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email address').required('Email is required'),
+  email: Yup.string()
+    .email('Invalid email address')
+    .required('Email is required'),
   password: Yup.string().required('Password is required'),
 });
 
@@ -81,7 +83,7 @@ export const LoginForm = () => {
                 fontWeight: 'bold',
                 fontSize: '18px',
               }}
-              onClick={(e) => handleSubmit(e,values)}
+              onClick={e => handleSubmit(e, values)}
             >
               Log In
             </Button>
