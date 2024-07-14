@@ -29,7 +29,8 @@
 //   );
 // };
 
-// import css from './Modal.module.css';
+
+import css from './Modal.module.css';
 import { MdClose } from 'react-icons/md';
 import { useEffect } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
@@ -52,7 +53,7 @@ function Modal({ closeModal, openModal }) {
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape');
-      closeModal();
+      onClose();
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -63,34 +64,38 @@ function Modal({ closeModal, openModal }) {
       window.removeEventListener('keydown', handleKeyDown);
       body.style.overflow = 'auto';
     };
-  }, [closeModal]);
+    
+  }, [onClose]);
 
   return (
-    <div >
-      <div >
-        <button  onClick={closeModal}>
+    <div className={css.modalBackground}>
+      <div className={css.modalContainer}>
+        <button className={css.modalCloseBtn} onClick={closeModal}>
           <MdClose />
         </button>
-        <h1 >
+        <h1 className={css.modalHeader}>
           Your recommended daily calorie intake is
         </h1>
-        <p >
-          X <span >KCal</span>
+        <p className={css.modalTotalCalories}>
+          X <span className={css.modalCaloriesLabel}>KCal</span>
         </p>
-        <div >
-          <h2 >
+        <div className={css.modalProhibitedFoodContainer}>
+          <h2 className={css.modalProhibitedFoodTitle}>
             Foods you should not eat
           </h2>
-          <ol >
+          <ol className={css.modalProhibitedFoodList}>
+
             {/* {notAllowedProducts.map((item, index) => (
               <li className={css.modalProhibitedFoodItem} key={index}>
                 {index + 1}. {item}
               </li>
             ))} */}
-            <li >List Number 1</li>
+
+            <li className={css.modalProhibitedFoodItem}>List Number 1</li>
           </ol>
         </div>
-        <button>Start Losing Weight</button>
+        <button className={css.modalStartBtn}>Start Losing Weight</button>
+
       </div>
     </div>
   );
