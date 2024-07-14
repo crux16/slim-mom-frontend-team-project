@@ -31,7 +31,7 @@
 
 
 import css from './Modal.module.css';
-import { MdClose } from 'react-icons/md';
+// import { MdClose } from 'react-icons/md';
 import { useEffect } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 // import {
@@ -53,7 +53,7 @@ function Modal({ closeModal, openModal }) {
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape');
-      onClose();
+      closeModal();
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -65,14 +65,16 @@ function Modal({ closeModal, openModal }) {
       body.style.overflow = 'auto';
     };
     
-  }, [onClose]);
+  }, [closeModal]);
 
   return (
-    <div className={css.modalBackground}>
+    <div>
+      <div className={css.modalBackground} onClick={closeModal}>
+      </div>
       <div className={css.modalContainer}>
-        <button className={css.modalCloseBtn} onClick={closeModal}>
+        {/* <button className={css.modalCloseBtn} onClick={closeModal}>
           <MdClose />
-        </button>
+        </button> */}
         <h1 className={css.modalHeader}>
           Your recommended daily calorie intake is
         </h1>

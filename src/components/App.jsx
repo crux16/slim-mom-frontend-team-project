@@ -45,13 +45,13 @@ export const App = () => {
         <Route
          path="/diary"
          element={
-          <PrivateRoute component={<DiaryPage />} redirectTo="/" />
+          <PrivateRoute component={<DiaryPage />} redirectTo="/login" />
          }
          />
          <Route
          path="/calculator"
          element={
-          <PrivateRoute component={<CalculatorPage />} redirectTo="/" />
+          <PublicRoute component={<CalculatorPage />} redirectTo="/login" />
         }
         />
         <Route

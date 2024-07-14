@@ -12,7 +12,7 @@ import css from './CalculatorForm.module.css';
 // import { useDispatch } from 'react-redux';
 // import { useNavigate } from 'react-router-dom';
 
-const CalculatorForm = () => {
+const CalculatorForm = ({displayModal}) => {
   // const dispatch = useDispatch();
   // const navigate = useNavigate();
 
@@ -21,6 +21,9 @@ const CalculatorForm = () => {
     const form = e.target;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
+    if(displayModal){
+      displayModal();
+    }
     console.log(data);
     // dispatch(data);
     // form.reset();
@@ -113,7 +116,7 @@ const CalculatorForm = () => {
         </FormControl>
       </div>
       <div className={css.button}>
-        <Button
+         <Button
           variant="contained"
           color="warning"
           type="submit"
