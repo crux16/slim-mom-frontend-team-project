@@ -1,48 +1,77 @@
 .container {
-  border: 1px;
-  padding-top: 112px;
-  padding-left: 20px;
-
-  @media screen and (min-width: 768px) {
-    padding-top: 160px;
-    padding-left: 32px;
-  }
-
-  @media screen and (min-width: 1158px) {
-    padding-top: 240px;
-    padding-left: 16px;
-  }
+  height: 100vh;
+  padding: 20px;
 }
 
-.title {
-  width: 335px;
+h1 {
+  color: #212121;
+  font-size: 1.5rem;
+  font-style: normal;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 25.2px;
-  font: verdana;
-
-  @media screen and (min-width: 768px) {
-    font-size: 34px;
-    line-height: 47.6px;
-    width: 528px;
-  }
-
-  @media screen and (min-width: 1158px) {
-    font-size: 34px;
-    line-height: 47.6px;
-    /* width: 608px; */
-  }
-  /* font: verdana; */
+  line-height: 140%; /* 25.2px */
 }
 
-.label1 {
-  display: block;
+.formFields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
+  width: 250px;
+}
+
+.input,
+.bloodType {
+  width: 100%;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 5px;
 }
 
 .button {
-  border-radius: 30px;
-  width: 210px;
-  height: 43px;
-  background-color: #fc842d;
-  color: white;
+  margin: 30px 0 0;
+  text-align: center;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .formFields {
+    width: 700px;
+  }
+
+  .input,
+  .bloodType {
+    width: 300px;
+  }
+
+  .button {
+    margin: 50px 0 0;
+    text-align: left;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  h1 {
+    width: 600px;
+    font-size: 2.5rem;
+  }
+  .formFields {
+    width: 600px;
+    justify-content: space-between;
+  }
+
+  .input,
+  .bloodType {
+    width: 280px;
+  }
+
+  .button {
+    width: 600px;
+    text-align: right;
+  }
 }

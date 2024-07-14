@@ -77,9 +77,7 @@ const HomePage = () => {
         </form> */}
         {/* {openModal && <Modal closeModal={closeModal} />} */}
         <Modal closeModal={true}>
-
         </Modal>
-
       </div>
     </HelmetProvider>
   );
