@@ -16,15 +16,6 @@ const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
 const DiaryPage = lazy(() => import('pages/DiaryPage/DiaryPage'));
 
-
-
-
-
-
-
-
-
-
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
@@ -54,17 +45,7 @@ export const App = () => {
         <Route
          path="/diary"
          element={
-
           <PrivateRoute component={<DiaryPage />} redirectTo="/" />
-
-
-
-
-
-
-
-
-
          }
          />
          <Route
