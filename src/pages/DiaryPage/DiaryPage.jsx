@@ -29,7 +29,7 @@ function DiaryPage() {
   const themeMode = useSelector(selectThemeMode);
   const [modalState, setModalState] = useState({
     open: false,
-    source: 'diaryPage',
+    source: 'DiaryPage',
   });
   const refContainer = useRef();
   const [dimensions, setDimensions] = useState({
