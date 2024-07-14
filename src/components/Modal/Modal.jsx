@@ -29,6 +29,7 @@
 //   );
 // };
 
+
 import css from './Modal.module.css';
 import { MdClose } from 'react-icons/md';
 import { useEffect } from 'react';
@@ -49,7 +50,6 @@ function Modal({ closeModal, openModal }) {
   //   navigate('/registration');
   //   dispatch(getDailyRate(null));
   // };
-
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape');
@@ -64,6 +64,7 @@ function Modal({ closeModal, openModal }) {
       window.removeEventListener('keydown', handleKeyDown);
       body.style.overflow = 'auto';
     };
+    
   }, [onClose]);
 
   return (
@@ -83,15 +84,18 @@ function Modal({ closeModal, openModal }) {
             Foods you should not eat
           </h2>
           <ol className={css.modalProhibitedFoodList}>
+
             {/* {notAllowedProducts.map((item, index) => (
               <li className={css.modalProhibitedFoodItem} key={index}>
                 {index + 1}. {item}
               </li>
             ))} */}
+
             <li className={css.modalProhibitedFoodItem}>List Number 1</li>
           </ol>
         </div>
         <button className={css.modalStartBtn}>Start Losing Weight</button>
+
       </div>
     </div>
   );

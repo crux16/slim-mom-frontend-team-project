@@ -1,16 +1,20 @@
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { Route, Routes } from 'react-router-dom';
-// import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
+import { PublicRoute } from './PublicRoute/PublicRoute';
+
+import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAuth } from '../hooks/useAuth';
 import { refreshUser } from '../redux/auth/authOperations';
+import 'react-toastify/dist/ReactToastify.css';
 
-const CalculatorPage = lazy(() =>
-  import('../pages/CalculatorPage/CalculatorPage')
-);
+
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const CalculatorPage = lazy(() => import('../pages/CalculatorPage/CalculatorPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
+const DiaryPage = lazy(() => import('pages/DiaryPage/DiaryPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -25,20 +29,36 @@ export const App = () => {
   ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<CalculatorPage />} />
+        <Route index element={<HomePage />} />
         <Route
           path="/register"
           element={
-            <RegisterPage />
-            // <RestrictedRoute redirectTo="/" component={<RegisterPage />} />
+            <PublicRoute redirectTo="/calculator" component={<RegisterPage />} />
           }
         />
         <Route
           path="/login"
           element={
-            <LoginPage />
-            // <RestrictedRoute redirectTo="/" component={<LoginPage />} />
+            <PublicRoute redirectTo="/calculator" component={<LoginPage />} />
           }
+        />
+        <Route
+         path="/diary"
+         element={
+          <PrivateRoute component={<DiaryPage />} redirectTo="/" />
+         }
+         />
+         <Route
+         path="/calculator"
+         element={
+          <PrivateRoute component={<CalculatorPage />} redirectTo="/" />
+        }
+        />
+        <Route
+        path="/logout"
+        element={
+          <PrivateRoute component={HomePage} redirectTo='/login' />
+        }
         />
       </Route>
     </Routes>

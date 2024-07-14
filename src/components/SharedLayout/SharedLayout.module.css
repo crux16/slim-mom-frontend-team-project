@@ -1,19 +1,17 @@
 .container {
   background-image: none;
+  scroll-behavior: smooth;
 
   /* Tablet */
   @media screen and (min-width: 768px) {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
     background-image: url(../../images/tabletMainBg.png);
     background-repeat: no-repeat;
     background-position: top;
     background-size: contain;
+    background-attachment: fixed;
   }
 
   @media screen and (min-width: 1158px) {
-    position: fixed;
     max-width: 100%;
     background-image: url(../../images/desktopMainBg.png);
     background-position: right;
