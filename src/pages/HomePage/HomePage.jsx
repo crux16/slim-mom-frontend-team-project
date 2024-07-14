@@ -1,22 +1,21 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import css from './HomePage.module.css';
 import Modal from '../../components/Modal/Modal';
-// import { useState } from 'react';
+import { useState } from 'react';
 import CalculatorForm from 'components/CalculatorForm/CalculatorForm';
 // import { ModalOverlay, useDisclosure } from '@chakra-ui/react';
 const HomePage = () => {
   //MODAL
 
-  // const [openModal, setOpenModal] = useState(true);
-  // const displayModal = () => {
-  //   setOpenModal(true);
+  const [openModal, setOpenModal] = useState(false);
+  const displayModal = () => {
+    setOpenModal(!openModal);
+  };
 
-  // };
+  const closeModal = () => {
+    setOpenModal(!openModal);
 
-  // const closeModal = () => {
-  //   setOpenModal(false);
-
-  // };
+  };
 
   return (
     <HelmetProvider>
@@ -27,7 +26,7 @@ const HomePage = () => {
         <h1 className={css.title}>
           Calculate your daily calorie intake right now
         </h1>
-        <CalculatorForm />
+        <CalculatorForm displayModal={displayModal} />
         {/* <form>
           <div>
             <label htmlFor="">
@@ -72,12 +71,12 @@ const HomePage = () => {
             </label>
           </div>
           <button type="submit" className={css.button} onClick={displayModal}>
-            Start losing weight
+          Start losing weight
           </button>
         </form> */}
         {/* {openModal && <Modal closeModal={closeModal} />} */}
-        <Modal closeModal={true}>
-        </Modal>
+        { openModal && <Modal closeModal={closeModal} /> }
+
       </div>
     </HelmetProvider>
   );
