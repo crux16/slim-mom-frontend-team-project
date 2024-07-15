@@ -1,6 +1,6 @@
 # SlimMom
 
-## GoIT Team "Team#1" Project SlimMom
+## GoIT Team "Code NIN.JAS" Project SlimMom
 
 ## [ Front-end Technologies ]
 
@@ -36,114 +36,88 @@
 <table>
 <tr>
     <td align="center">
-        <a href="https://github.com/Maksim-Yaroschuk">
-            <img src="https://avatars.githubusercontent.com/u/79583144?v=4" width="100;" alt="Maksim"/>
+        <a href="https://github.com/">
+            <img src="" width="100;" alt="Rowell"/>
             <br />
-            <sub><b>Maksim Yaroschuk</b></sub>
+            <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/masiuk-mykola">
-            <img src="https://avatars.githubusercontent.com/u/50314811?v=4" width="100;" alt="masiuk-mykola"/>
+        <a href="https://github.com/">
+            <img src="" width="100;" alt="Les John Paul"/>
             <br />
-            <sub><b>Mykola Masiuk</b></sub>
+            <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/zhekichaan">
-            <img src="https://avatars.githubusercontent.com/u/100925349?v=4" width="100;" alt="Yevhen"/>
+        <a href="https://github.com/">
+            <img src="" width="100;" alt="Josh"/>
             <br />
-            <sub><b>Yevhen Chernytskyi</b></sub>
+            <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/ArtemYakushkin">
-            <img src="https://avatars.githubusercontent.com/u/91287626?v=4" width="100;" alt="Artem"/>
+        <a href="https://github.com/">
+            <img src="" width="100;" alt="Anggi"/>
             <br />
-            <sub><b>Artem Yakushkin</b></sub>
+            <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/Sashanikitenkova">
-            <img src="https://avatars.githubusercontent.com/u/81653543?v=4" width="100;" alt="Sasha"/>
+        <a href="https://github.com/">
+            <img src="" width="100;" alt="Mon"/>
             <br />
-            <sub><b>Sasha Nikitenkova</b></sub>
+            <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/pixelboyXL">
-            <img src="https://avatars.githubusercontent.com/u/94831587?v=4" width="100;" alt="Dmytro"/>
+        <a href="https://github.com/">
+            <img src="" width="100;" alt="Paulo"/>
             <br />
-            <sub><b>Dmytro Kravchenko</b></sub>
+           <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/">
+            <img src="" width="100;" alt="Cris"/>
+            <br />
+            <sub><b>Developer</b></sub>
+            <br />
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     </tr>
     <tr>
     <td align="center">
-        <a href="https://github.com/YevheniiLi">
-            <img src="https://avatars.githubusercontent.com/u/96422034?v=4" width="100;" alt="Yevhenii Lymarenko"/>
+        <a href="https://github.com/">
+            <img src="" width="100;" alt="Ramz"/>
             <br />
-            <sub><b>Yevhenii Lymarenko</b></sub>
+            <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/milintey">
-            <img src="https://avatars.githubusercontent.com/u/96431426?v=4" width="100;" alt="Illia Milintieiev"/>
+        <a href="https://github.com/">
+            <img src="" width="100;" alt="Lauren"/>
             <br />
-            <sub><b>Illia Milintieiev</b></sub>
+            <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/salampego">
-            <img src="https://avatars.githubusercontent.com/u/55463651?v=4" width="100;" alt="Haik"/>
-            <br />
-            <sub><b>Haik</b></sub>
-            <br />
-            <sub><b>🟨🟦</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/TkachAn">
-            <img src="https://avatars.githubusercontent.com/u/61586895?v=4" width="100;" alt="Andrey Tkachenko"/>
-            <br />
-            <sub><b>Andrey Tkachenko</b></sub>
-            <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     </tr>
 </table>
 <!-- readme: contributors,ImgBotApp/- -end -->
-
-### Bots
-
-<!-- readme: bots -start -->
-<table>
-<tr>
-    <td align="center">
-        <a href="https://github.com/github-actions[bot]">
-            <img src="https://avatars.githubusercontent.com/in/15368?v=4" width="100;" alt="github-actions[bot]"/>
-            <br />
-            <sub><b>github-actions[bot]</b></sub>
-        </a>
-    </td>
-    </tr>
-</table>
-<!-- readme: bots,ImgBotApp -end -->
-<!-- markdownlint-restore -->
