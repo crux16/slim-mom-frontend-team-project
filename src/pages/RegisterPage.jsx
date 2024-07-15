@@ -13,7 +13,7 @@ import {
   ButtonWrapper,
   H2,
   Wrapper,
-  ButtonGoogle,
+  // ButtonGoogle,
 } from '../components/RegisterPage/RegisterPage.styled';
 import { WrapperWithFruits } from 'components/RegisterPage/RegisterPage.styled';
 import { Loader } from 'components/Loader/Loader';
@@ -144,9 +144,9 @@ const RegisterPage = () => {
                   Log In
                 </Button>
               </div>
-              <ButtonGoogle href="https://slimmom-oz0k.onrender.com/api/auth/google-signup">
+              {/* <ButtonGoogle href="https://slimmom-oz0k.onrender.com/api/auth/google-signup">
                 Register Google
-              </ButtonGoogle>
+              </ButtonGoogle> */}
             </ButtonWrapper>
           </Form>
         </Formik>
