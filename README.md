@@ -41,7 +41,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     <td align="center">
@@ -50,7 +50,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     <td align="center">
@@ -59,7 +59,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     <td align="center">
@@ -68,7 +68,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     <td align="center">
@@ -77,7 +77,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     <td align="center">
@@ -86,7 +86,7 @@
             <br />
            <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     <td align="center">
@@ -95,7 +95,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     </tr>
@@ -106,7 +106,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     <td align="center">
@@ -115,7 +115,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>🟨🟦</b></sub>
+            <sub><b>![alt text](image.png)</b></sub>
         </a>
     </td>
     </tr>
