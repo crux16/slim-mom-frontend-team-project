@@ -1,4 +1,6 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, 
+  // Navigate
+ } from 'react-router-dom';
 import { Home } from 'pages/Home';
 import { Layout } from './Layout/Layout';
 import { Suspense, useEffect, lazy, useContext } from 'react';
@@ -46,9 +48,9 @@ export const App = () => {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Navigate to="home" />} />
+            {/* <Route index element={<Navigate to="home" />} /> */}
             <Route
-              path="home"
+              index
               element={
                 <PublicRoute restricted>
                   <Home />

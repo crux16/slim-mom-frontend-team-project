@@ -66,9 +66,7 @@ export const Home = () => {
     <WrapperWtithFruits>
       {isChristmas && <Snowfall />}
       <Box maxWidth={'1280px'} m={'0 auto'}>
-        {isModalOpened && (
-          <Modal onClose={onModalClose} userParams={userParams} />
-        )}
+        {isModalOpened && <Modal onClose={onModalClose} userParams={userParams} />}
         <H2>Calculate your daily calorie intake right now</H2>
         <WeightForm
           openModal={setIsModalOpened}
