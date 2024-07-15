@@ -120,10 +120,10 @@ export const DiaryAddProductForm = ({onClose, isModalOpened}) => {
             </FormWrapper>
             <SearchBox className={visible ? "visible" : null}>
               {searchProducts !=="" && searchProducts.length !== 0 && searchProducts.map((product) => {
-                if(userInfo.notAllowedProductsAll.find(el => el === product.title.ua)) {
-                  return <SearchItemNotRecommended key={product._id} onClick={() => handleClick(setFieldValue, product.title.ua)}>{product.title.ua}</SearchItemNotRecommended>
+                if(userInfo.notAllowedProductsAll.find(el => el === product.title)) {
+                  return <SearchItemNotRecommended key={product._id} onClick={() => handleClick(setFieldValue, product.title)}>{product.title}</SearchItemNotRecommended>
                 }
-                return <SearchItem key={product._id} onClick={() => handleClick(setFieldValue, product.title.ua)}>{product.title.ua}</SearchItem>
+                return <SearchItem key={product._id} onClick={() => handleClick(setFieldValue, product.title)}>{product.title}</SearchItem>
               })}
             </SearchBox>
           </Box>
