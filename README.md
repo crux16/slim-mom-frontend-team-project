@@ -26,8 +26,8 @@
 
 ## [ Repo information ]
 
-![Repo size](https://img.shields.io/github/repo-size/Maksim-Yaroschuk/SlimMom?style=flat-square)
-![GitHub top language](https://img.shields.io/github/languages/top/Maksim-Yaroschuk/SlimMom?style=flat-square)
+![Repo size](https://img.shields.io/github/repo-size/crux16/slim-mom-frontend-team-project?style=flat-square)
+![GitHub top language](https://img.shields.io/github/languages/top/crux16/slim-mom-frontend-team-project?style=flat-square)
 
 ### Contributors
 
@@ -41,7 +41,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>![alt text](image.png)</b></sub>
+            <sub><img src='https://github.com/user-attachments/assets/6135aac6-8523-46ea-90fe-4467c7bd74f1' alt="PH"/></b></sub>
         </a>
     </td>
     <td align="center">
@@ -50,7 +50,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>![alt text](image.png)</b></sub>
+            <sub><img src='https://github.com/user-attachments/assets/6135aac6-8523-46ea-90fe-4467c7bd74f1' alt="PH"/></b></sub>
         </a>
     </td>
     <td align="center">
@@ -59,7 +59,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>![alt text](image.png)</b></sub>
+            <sub><img src='https://github.com/user-attachments/assets/6135aac6-8523-46ea-90fe-4467c7bd74f1' alt="PH"/></b></sub>
         </a>
     </td>
     <td align="center">
@@ -68,7 +68,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>![alt text](image.png)</b></sub>
+            <sub><img src='https://github.com/user-attachments/assets/6135aac6-8523-46ea-90fe-4467c7bd74f1' alt="PH"/></b></sub>
         </a>
     </td>
     <td align="center">
@@ -77,7 +77,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>![alt text](image.png)</b></sub>
+            <sub><img src='https://github.com/user-attachments/assets/6135aac6-8523-46ea-90fe-4467c7bd74f1' alt="PH"/></b></sub>
         </a>
     </td>
     <td align="center">
@@ -86,7 +86,7 @@
             <br />
            <sub><b>Developer</b></sub>
             <br />
-            <sub><b>![alt text](image.png)</b></sub>
+            <sub><img src='https://github.com/user-attachments/assets/6135aac6-8523-46ea-90fe-4467c7bd74f1' alt="PH"/></b></sub>
         </a>
     </td>
     <td align="center">
@@ -95,7 +95,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>![alt text](image.png)</b></sub>
+            <sub><b>![image](https://github.com/user-attachments/assets/f576936c-b9c8-4733-955e-f896ddafdec5)</b></sub>
         </a>
     </td>
     </tr>
@@ -106,7 +106,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>![alt text](image.png)</b></sub>
+            <sub><img src='https://github.com/user-attachments/assets/6135aac6-8523-46ea-90fe-4467c7bd74f1' alt="PH"/></b></sub>
         </a>
     </td>
     <td align="center">
@@ -115,7 +115,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>![alt text](image.png)</b></sub>
+            <sub><img src='https://github.com/user-attachments/assets/6135aac6-8523-46ea-90fe-4467c7bd74f1' alt="PH"/></b></sub>
         </a>
     </td>
     </tr>
