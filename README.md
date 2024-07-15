@@ -1,8 +1,10 @@
 # SlimMom
 
 ## GoIT Team "Code NIN.JAS" Project SlimMom
+![image](https://github.com/user-attachments/assets/cf831c8b-5b40-45ac-bb01-a7d86c591c38)
 
 ## [ Front-end Technologies ]
+
 
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
@@ -95,7 +97,7 @@
             <br />
             <sub><b>Developer</b></sub>
             <br />
-            <sub><b>![image](https://github.com/user-attachments/assets/f576936c-b9c8-4733-955e-f896ddafdec5)</b></sub>
+            <sub><img src='https://github.com/user-attachments/assets/6135aac6-8523-46ea-90fe-4467c7bd74f1' alt="PH"/></b></sub>
         </a>
     </td>
     </tr>
