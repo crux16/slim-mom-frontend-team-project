@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 import { routes } from 'components/Routes/routes';
 import { useMediaQuery } from 'react-responsive';
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.querySelector('#root');
 
 export const Modal = ({ onClose, children, userParams }) => {
   const [backResponse, setBackResponse] = useState(null);
