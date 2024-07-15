@@ -33,11 +33,11 @@ export const StyledLink = styled(NavLink)`
     text-decoration: none;
 
     &.active {
-      color: ${p => p.theme.colors.gray};
+      color: orange;
     }
     &:hover,
     &:focus {
-      color: ${p => p.theme.colors.gray};
+      color: orange;  
     }
   }
 `;
