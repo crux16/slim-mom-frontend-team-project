@@ -1,36 +1,28 @@
-import React from 'react';
-import { Hearts } from 'react-loader-spinner';
-import { Box } from '@mui/material';
-function Loader() {
+import { ThemeContext } from 'components/Context/Context';
+import React, { useContext } from 'react';
+import { ThreeCircles } from 'react-loader-spinner';
+import { LoaderWrapper, MainLoader } from './Loader.styled';
+
+export const Loader = () => {
+  const { isChristmas } = useContext(ThemeContext);
+
   return (
-    // <Dna
-    //   sx={{margin: '0 auto',}}
-    //   visible={true}
-    //   height="200"
-    //   width="200"
-    //   ariaLabel="dna-loading"
-    //   wrapperStyle={{}}
-    //   wrapperClass="dna-wrapper"
-    // />
-
-    // If the color is better orange sub this for the green:  "var(--accent-bright-color)"
-    <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      minHeight="calc(100vh / 6)" // Set the minHeight to 1/6th of the viewport height
-    >
-      <Hearts
-        height="200"
-        width="200"
-        color="#4fa94d"
-        ariaLabel="hearts-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-      />
-    </Box>
+    <MainLoader>
+      <LoaderWrapper>
+        <ThreeCircles
+          color={isChristmas ? '#D6001C' : '#FC842D'}
+          arialLabel="loading-indicator"
+          height="120"
+          width="120"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel="three-circles-rotating"
+          outerCircleColor=""
+          innerCircleColor=""
+          middleCircleColor=""
+        />
+      </LoaderWrapper>
+    </MainLoader>
   );
-}
-
-export default Loader;
+};

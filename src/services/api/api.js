@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://slim-mom-backend-team-project-ik9a.onrender.com/';
-// axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'https://slim-mom-backend-team-project-ik9a.onrender.com';
+// const API_KEY = '';
 
 const END_POINTS = {
   DailyCalorieIntake: '/api/products',
@@ -18,7 +18,7 @@ export const apiCalorieIntake = async body => {
 };
 
 export const apiUpdateInfoUser = async (token, body) => {
-  const res = await axios.patch(END_POINTS.UpdateUserInfo, body, {
+  const res = await axios.put(END_POINTS.UpdateUserInfo, body, {
     headers: {
       Authorization: `Bearer ${token}`
     },

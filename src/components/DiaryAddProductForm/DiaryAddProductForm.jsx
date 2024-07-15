@@ -1,195 +1,134 @@
+import { Box } from 'components/Box';
+import React from 'react';
+import { useMediaQuery } from 'react-responsive';
+import { ErrorMessage, Formik } from 'formik';
+import * as yup from 'yup';
+import {
+  NameInput,
+  GramsInput,
+  Button,
+  FormWrapper,
+  SearchBox,
+  SearchItem,
+  NameError,
+  GramsError,
+  SearchItemNotRecommended
+} from './DiaryAddProductForm.styled';
+import AddIcon from "../../images/svg/add.svg"
 import { useState } from 'react';
-import { Autocomplete, TextField, Stack } from '@mui/material';
-import css from './DiaryAddProductForm.module.css';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { addDiaryEntry, searchFoods } from '../../redux/user/userOperations';
-import CustomButton from 'components/CustomButton/CustomButton';
-import { useUser } from '../../hooks/useUser';
-import { selectThemeMode } from 'redux/theme/themeSelectors';
-import { throttle } from 'lodash';
-import { clearAllFoodsSearchList, setDiaryBackBtn } from 'redux/user/userSlice';
-import useViewPort from 'hooks/useViewport';
-import DiaryAddButton from 'components/DiaryAddButton/DiaryAddButton';
-import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { getToken } from 'redux/authSelectors';
+import { selectDate } from 'redux/productsSelectors';
+import { setProducts } from 'redux/productsSlice';
+import { apiAddMyProduct, apiGetSearchProducts } from 'services/api/api';
+import { getUserInfo } from 'redux/authSelectors';
 
-export default function DiaryAddProduct({ diaryBackBtn }) {
-  const [productName, setProductName] = useState('');
-  const [grams, setGrams] = useState('');
-  const { calendarDate, allFoodsSearchList, calculator } = useUser();
-  const dispatch = useDispatch();
-  const autoCompleteFoodsList = allFoodsSearchList || [];
+const schema = yup.object().shape({
+  productName: yup
+    .string()
+    .required('Name is required field'),
+  productWeight: yup
+    .number('Grams must be a number')
+    .typeError('Grams must be a number')
+    .required('Grams is required field')
+})
 
-  const autoCompleteFoodsData = autoCompleteFoodsList.map((food, index) => ({
-    key: index,
-    title: food.title,
-    groupBloodNotAllowed: food.groupBloodNotAllowed,
-  }));
-  const themeMode = useSelector(selectThemeMode);
-  const { width } = useViewPort();
-
-  const userBloodTypeIndex = () => {
-    if (calculator.unitOfMeasure === 'M') {
-      return calculator.bloodTypesMetric.indexOf(calculator.bloodType);
-    } else {
-      return calculator.bloodTypesStandard.indexOf(calculator.bloodType);
-    }
+export const DiaryAddProductForm = ({onClose, isModalOpened}) => {
+  const token = useSelector(getToken)
+  const dispatch = useDispatch()
+  const date = useSelector(selectDate)
+  const mobile = useMediaQuery({ query: '(max-width: 426px)' });
+  const initialValues = {
+    productName: '',
+    productWeight: '',
   };
-  const bloodTypeIndex = userBloodTypeIndex();
-  const handleGramsChange = e => {
-    if (e.target.value > 0 || e.target.value === '') {
-      setGrams(e.target.value);
-    } else {
-      toast.warn('Grams can not be negative number or letters', {
-        position: 'top-right',
-        autoClose: 3000,
-        className: 'error-toast ',
-      });
-    }
-  };
+  const [searchProducts, setSearchProducts] = useState([])
+  const [visible, setVisible] = useState(false)
+  const userInfo = useSelector(getUserInfo)
 
-  const handleInputChange = e => {
-    if (e && e.target) {
-      const userInput = e.target.value || '';
-      setProductName(userInput);
-      throttleSearchFoods(userInput);
-    }
-  };
-
-  const throttleSearchFoods = throttle(userInput => {
-    dispatch(searchFoods(userInput));
-  }, 500);
-  const handleSubmit = e => {
+  const search = async (value) => {
     try {
-      e.preventDefault();
-      const foodItem = allFoodsSearchList.find(
-        item => item.title === productName
-      );
-      const calories = Math.ceil((foodItem.calories / 100) * grams) || 0;
-      dispatch(addDiaryEntry({ calendarDate, productName, grams, calories }));
-      dispatch(clearAllFoodsSearchList());
-      setProductName('');
-      setGrams('');
-      dispatch(setDiaryBackBtn(!diaryBackBtn));
+      const result = await apiGetSearchProducts(value)
+      setSearchProducts(result)
     } catch (error) {
-      throw new Error(`Error submitting diary entry` + error.message);
+      setSearchProducts([])
     }
-  };
+  }
+
+  const handleSubmit = async (values, { resetForm }) => {
+    schema.validate(values)
+    const {productName, productWeight} = values
+    const body = {productName, productWeight: parseInt(productWeight), date}
+    try {
+      const result = await apiAddMyProduct(body, token, date)
+      if(result.length>0) {
+        dispatch(setProducts(result))
+      } else {
+        dispatch(setProducts([]))
+      }
+    } catch (error) {
+      alert("Oops.. Product not found!")
+    }
+    mobile && onClose()
+    resetForm()
+  }
+
+  const handleChange = (e) => {
+    const productName = e.target.value
+    if (e.target.name === "productName") {
+      if(productName !== "" && productName.length > 1) {
+        search(productName)
+        setVisible(true)
+      } else {
+        setVisible(false)
+        setSearchProducts([])
+      }
+    }
+  }
+
+  const handleClick = (setFieldValue, title) => {
+    setVisible(false)
+    setFieldValue("productName", title)
+  }
 
   return (
-    <div className={css.section}>
-      <form className={css.diaryform} onSubmit={handleSubmit}>
-        <div className={css.formdiv}>
-          <Stack spacing={2}>
-            <Autocomplete
-              id="size-small-standard"
-              sx={{
-                '@media (min-width: 768px)': {
-                  width: '240px',
-                },
-              }}
-              ListboxProps={{
-                sx: {
-                  backgroundColor: themeMode === 'dark' ? '#2a1d45' : '#ffffff',
-                },
-              }}
-              freeSolo
-              autoComplete
-              includeInputInList
-              filterSelectedOptions
-              size="small"
-              value={productName}
-              onChange={(e, selectedObject) => {
-                if (selectedObject !== null)
-                  setProductName(selectedObject.title);
-              }}
-              inputValue={productName}
-              onInputChange={handleInputChange}
-              renderInput={params => (
-                <TextField
-                  required
-                  sx={{
-                    fontFamily: 'Verdana',
-                    fontSize: '14px',
-                    fontWeight: '700',
-                    lineHeight: '17px',
-                    letterSpacing: '0.04em',
-                    textAlign: 'left',
-                    marginBottom: '8px',
-                    '@media (min-width: 768px)': {
-                      width: '240px',
-                      marginBottom: '0',
-                    },
-                  }}
-                  {...params}
-                  variant="standard"
-                  label="Enter product name"
-                />
-              )}
-              noOptionsText="No locations"
-              options={autoCompleteFoodsData}
-              renderOption={(props, option) => {
-                const notRecommended =
-                  option.groupBloodNotAllowed[bloodTypeIndex];
-                return (
-                  // <li key={option.key}>
-
-                  <li {...props} key={option.key}>
-                    <div>
-                      {notRecommended && (
-                        <p className={css.notAllowedFood}>Not Recommended</p>
-                      )}
-
-                      {option.title}
-                    </div>
-                  </li>
-                );
-              }}
-              getOptionLabel={option => option.title || ''}
-            />
-          </Stack>
-        </div>
-        <div className={css.formdiv}>
-          <TextField
-            required
-            sx={{
-              fontFamily: 'Verdana',
-              fontSize: '14px',
-              fontWeight: '700',
-              lineHeight: '17px',
-              letterSpacing: '0.04em',
-              textAlign: 'left',
-              '@media (min-width: 768px)': {
-                width: '106px',
-                paddingBottom: '0',
-                marginRight: '100px',
-                marginLeft: '22px',
-                textAlign: 'right',
-              },
-            }}
-            id="standard-basic"
-            label="Grams"
-            variant="standard"
-            type="number"
-            value={grams}
-            onChange={handleGramsChange}
-          />
-        </div>
-        {width > 768 ? (
-          <DiaryAddButton
-            onClick={handleSubmit}
-            disabled={productName === '' || grams === ''}
-          />
-        ) : (
-          <CustomButton
-            className={css.diaryFormBtn}
-            color="orange"
-            disabled={productName === '' || grams === ''}
-          >
-            Add
-          </CustomButton>
+      <Box position="relative" my="40px">
+      <Formik
+        enableReinitialize={true}
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={schema}
+      >
+        {({formikProps, setFieldValue }) => (
+          <Box>
+            <FormWrapper onChange={handleChange}>
+              <NameInput
+                type="productName"
+                placeholder="Enter product name"
+                name="productName"
+                autoComplete="off"
+              />
+              <ErrorMessage name='productName' component={NameError} />
+              <GramsInput
+                type="productWeight"
+                placeholder="Grams"
+                name="productWeight"
+                autoComplete="off"
+              />
+              <ErrorMessage name='productWeight' component={GramsError} />
+              {mobile ? <Button type="submit">Add</Button> : <Button type="submit"><img src={AddIcon} alt="add product" /></Button>}
+            </FormWrapper>
+            <SearchBox className={visible ? "visible" : null}>
+              {searchProducts !=="" && searchProducts.length !== 0 && searchProducts.map((product) => {
+                if(userInfo.notAllowedProductsAll.find(el => el === product.title.ua)) {
+                  return <SearchItemNotRecommended key={product._id} onClick={() => handleClick(setFieldValue, product.title.ua)}>{product.title.ua}</SearchItemNotRecommended>
+                }
+                return <SearchItem key={product._id} onClick={() => handleClick(setFieldValue, product.title.ua)}>{product.title.ua}</SearchItem>
+              })}
+            </SearchBox>
+          </Box>
         )}
-      </form>
-    </div>
-  );
+      </Formik>
+    </Box>
+  )
 }

@@ -1,66 +1,104 @@
-import { SharedLayout } from './SharedLayout/SharedLayout';
-import { Route, Routes } from 'react-router-dom';
-import { PublicRoute } from './PublicRoute/PublicRoute';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { Home } from 'pages/Home';
+import { Layout } from './Layout/Layout';
+import { Suspense, useEffect, lazy, useContext } from 'react';
+import { Loader } from './Loader/Loader';
+import { useDispatch, useSelector } from 'react-redux';
+import { getToken } from 'redux/authSelectors';
+import { useGetUserQuery } from 'redux/auth';
+import { setCurrentUser } from 'redux/authSlice';
+import { PrivateRoute } from './Routes/PrivateRoute';
+import { PublicRoute } from './Routes/PublicRoute';
+import { ThemeProvider } from 'styled-components';
+import { theme, christmasTheme } from './Theme/Theme';
+import { ThemeContext } from './Context/Context';
+import { DesktopApp } from './DesktopApp/DesktopApp';
 
-import { PrivateRoute } from './PrivateRoute/PrivateRoute';
-import { useEffect, lazy } from 'react';
-import { useDispatch } from 'react-redux';
-import { useAuth } from '../hooks/useAuth';
-import { refreshUser } from '../redux/auth/authOperations';
-import 'react-toastify/dist/ReactToastify.css';
-
-
-const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
-const CalculatorPage = lazy(() => import('../pages/CalculatorPage/CalculatorPage'));
-const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
-const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
-const DiaryPage = lazy(() => import('pages/DiaryPage/DiaryPage'));
+const Login = lazy(() => import('../pages/LoginPage'));
+const Register = lazy(() => import('../pages/RegisterPage'));
+const Diary = lazy(() => import('../pages/DiaryPage'));
+const Calculator = lazy(() => import('../pages/CalculatorPage'));
+const NotFound = lazy(() => import('../pages/NotFound'));
 
 export const App = () => {
+  const { isChristmas } = useContext(ThemeContext);
+  const dailyRate = useSelector(state => state.auth.userInfo.dailyRate);
+
   const dispatch = useDispatch();
-  const { isRefreshing } = useAuth();
+  const token = useSelector(getToken);
+
+  const mockQuery = '';
+  const { data } = useGetUserQuery(mockQuery, { skip: !token });
 
   useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
+    if (!data) {
+      return;
+    }
+    if (dailyRate) {
+      return;
+    }
 
-  return isRefreshing ? (
-    <b>Refreshing user...</b>
-  ) : (
-    <Routes>
-      <Route path="/" element={<SharedLayout />}>
-        <Route index element={<HomePage />} />
-        <Route
-          path="/register"
-          element={
-            <PublicRoute redirectTo="/calculator" component={<RegisterPage />} />
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <PublicRoute redirectTo="/calculator" component={<LoginPage />} />
-          }
-        />
-        <Route
-         path="/diary"
-         element={
-          <PrivateRoute component={<DiaryPage />} redirectTo="/login" />
-         }
-         />
-         <Route
-         path="/calculator"
-         element={
-          <PublicRoute component={<CalculatorPage />} redirectTo="/login" />
-        }
-        />
-        <Route
-        path="/logout"
-        element={
-          <PrivateRoute component={HomePage} redirectTo='/login' />
-        }
-        />
-      </Route>
-    </Routes>
+    dispatch(setCurrentUser(data));
+  }, [dailyRate, data, dispatch]);
+
+  return (
+    <ThemeProvider theme={isChristmas ? christmasTheme : theme}>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Navigate to="home" />} />
+            <Route
+              path="home"
+              element={
+                <PublicRoute restricted>
+                  <Home />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="login"
+              element={
+                <PublicRoute restricted>
+                  <Login />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="register"
+              element={
+                <PublicRoute restricted>
+                  <Register />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="diary"
+              element={
+                <PrivateRoute>
+                  <Diary />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="calculator"
+              element={
+                <PrivateRoute>
+                  <Calculator />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="desktop"
+              element={
+                <PrivateRoute>
+                  <DesktopApp />
+                </PrivateRoute>
+              }
+            />
+            <Route path="/*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </ThemeProvider>
   );
 };
