@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -160,21 +159,3 @@ const ModalWindow = ({ overlay, isOpen, onClose }) => {
 };
 
 export default ModalWindow;
-=======
-const Modal = ({ children, isOpen, onClose }) => {
-  if (!isOpen) {
-    return null;
-  }
-
-  return (
-    <div className="modal">
-      <div className="modal-content">
-        {children}
-        <button onClick={onClose}>Close</button>
-      </div>
-    </div>
-  );
-};
-
-export default Modal;
->>>>>>> 4b816a06149fc85aed50d29f8a190e43ed188f5f

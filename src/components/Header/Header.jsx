@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { Box, Flex, Link } from '@chakra-ui/react';
@@ -120,16 +119,6 @@ const Header = ({ onClick }) => {
         </Box>
       </Flex>
     </>
-=======
-import React from 'react';
-import Navbar from 'components/Navbar/NavBar';
-
-const Header = () => {
-  return (
-    <header>
-      <Navbar />
-    </header>
->>>>>>> 4b816a06149fc85aed50d29f8a190e43ed188f5f
   );
 };
 
