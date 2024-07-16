@@ -1,10 +1,13 @@
-import { Routes, Route, 
+import {
+  Routes,
+  Route,
   // Navigate
- } from 'react-router-dom';
+} from 'react-router-dom';
 import { Home } from 'pages/Home';
 import { Layout } from './Layout/Layout';
 import { Suspense, useEffect, lazy, useContext } from 'react';
-import { Loader } from './Loader/Loader';
+// import { Loader } from './Loader/Loader';
+import { LoaderNew } from './LoaderNew/LoaderNew';
 import { useDispatch, useSelector } from 'react-redux';
 import { getToken } from 'redux/authSelectors';
 import { useGetUserQuery } from 'redux/auth';
@@ -45,7 +48,7 @@ export const App = () => {
 
   return (
     <ThemeProvider theme={isChristmas ? christmasTheme : theme}>
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<LoaderNew />}>
         <Routes>
           <Route path="/" element={<Layout />}>
             {/* <Route index element={<Navigate to="home" />} /> */}
